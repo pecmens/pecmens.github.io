@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="retro-terminal">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Code Veteran | 老派程序员</title>
+
+    <!-- 内联CSS -->
+    <style>
+        :root {
+            --neon-green: #00ff00;
+            --crt-bg: #001100;
+        }
+
+        /* CRT效果 */
+        body {
+            background-color: var(--crt-bg);
+            background-image: linear-gradient(rgba(0,255,0,0.1) 1px, transparent 1px);
+            background-size: 100% 3px;
+            animation: scanline 6s linear infinite;
+            font-family: 'Courier New', monospace;
+            color: var(--neon-green);
+            overflow-x: hidden;
+        }
+
+        @keyframes scanline {
+            from { background-position: 0 0; }
+            to { background-position: 0 100vh; }
+        }
+
+        /* 点阵字体 */
+        .pixel-font {
+            font-family: 'Press Start 2P', 'Courier New', cursive;
+            text-shadow: 2px 2px #005500;
+        }
+
+        /* 终端样式 */
+        .terminal {
+            border: 3px double var(--neon-green);
+            background: rgba(0,20,0,0.9);
+            box-shadow: 0 0 20px rgba(0,255,0,0.3);
+            position: relative;
+        }
+        .terminal::after {
+            content: "";
+            position: absolute;
+            top:0;
+            left:0;
+            right:0;
+            bottom:0;
+            background: repeating-linear-gradient(
+                    0deg,
+                    rgba(0,255,0,0.1) 0px,
+                    rgba(0,255,0,0.1) 1px,
+                    transparent 1px,
+                    transparent 3px
+            );
+            pointer-events: none;
+        }
+
+        /* 覆盖Bootstrap样式 */
+        .navbar {
+            border-bottom: 2px groove var(--neon-green);
+            background: #000 !important;
+        }
+        .list-group-item {
+            background: rgba(0,30,0,0.8) !important;
+            color: var(--neon-green) !important;
+        }
+
+        /* 技能雷达图容器 */
+        #skillRadar {
+            image-rendering: pixelated;
+            border: 2px solid var(--neon-green);
+        }
+    </style>
+
+    <!-- 外部资源内联 -->
+    <link href="https://cdn.bootcdn.net/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<!-- ASCII艺术导航栏 -->
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+        <a class="navbar-brand pixel-font" href="#">
+            >_ CODE VETERAN
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="#about">[关于]</a></li>
+                <li class="nav-item"><a class="nav-link" href="#projects">[项目]</a></li>
+                <li class="nav-item"><a class="nav-link" href="#skills">[技能]</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- 主内容区 -->
+<main class="container my-5">
+    <!-- 打字机效果 -->
+    <section class="terminal p-4 mb-5">
+        <h2 id="typing-effect" class="pixel-font"></h2>
+    </section>
+
+    <!-- 项目展示 -->
+    <section id="projects" class="row g-4 mb-5">
+        <div class="col-md-6">
+            <div class="terminal p-3 h-100">
+                <h3 class="pixel-font">■ 近期项目</h3>
+                <div class="list-group">
+                    <div class="list-group-item">1. 8-bit模拟器 (6502汇编)</div>
+                    <div class="list-group-item">2. CRT效果生成库</div>
+                    <div class="list-group-item">3. 机械键盘声音引擎</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 代码片段 -->
+        <div class="col-md-6">
+            <div class="terminal p-3 h-100">
+                    <pre class="m-0">
+<span style="color:#0f0">10</span> PRINT "HELLO WORLD"
+<span style="color:#0f0">20</span> GOTO 10
+                    </pre>
+            </div>
+        </div>
+    </section>
+
+    <!-- 技能雷达图 -->
+    <section id="skills" class="terminal p-4 mb-5 text-center">
+        <h3 class="pixel-font mb-4">■ 技术雷达</h3>
+        <canvas id="skillRadar" width="400" height="400"></canvas>
+    </section>
+</main>
+
+<!-- 页脚 -->
+<footer class="terminal fixed-bottom mx-3 mb-3 px-3 py-2">
+    <div class="text-center pixel-font" style="font-size:0.8em">
+        © 2024 CODE VETERAN | EST. 1999
+    </div>
+</footer>
+
+<!-- 内联JavaScript -->
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+
+<script>
+    // 初始化打字机效果
+    $(function(){
+        $('#typing-effect').typed({
+            strings: [
+                "> WELCOME TO THE MATRIX...",
+                "> SYSTEM INITIALIZED",
+                "> READY FOR INPUT"
+            ],
+            typeSpeed: 40,
+            backSpeed: 30,
+            loop: true,
+            showCursor: false
+        });
+    });
+
+    // 绘制技能雷达图
+    const radar = document.getElementById('skillRadar').getContext('2d');
+    const skills = {
+        labels: ['C/C++', 'ASM', 'UNIX', 'ALGO', 'HARDWARE'],
+        data: [85, 70, 90, 88, 95]
+    };
+
+    new Chart(radar, {
+        type: 'radar',
+        data: {
+            labels: skills.labels,
+            datasets: [{
+                data: skills.data,
+                backgroundColor: 'rgba(0,255,0,0.2)',
+                borderColor: '#0f0',
+                pointBackgroundColor: '#0f0'
+            }]
+        },
+        options: {
+            scales: {
+                r: {
+                    grid: { color: '#0f03' },
+                    pointLabels: { color: '#0f0' },
+                    angleLines: { color: '#0f03' },
+                    ticks: {
+                        display: false,
+                        beginAtZero: true
+                    }
+                }
+            },
+            plugins: {
+                legend: { display: false }
+            }
+        }
+    });
+
+    // 响应式调整
+    $(window).on('resize', function(){
+        $('.pixel-font').css('font-size',
+            Math.min(window.innerWidth / 35, 24) + 'px');
+    }).trigger('resize');
+</script>
+</body>
+</html>
