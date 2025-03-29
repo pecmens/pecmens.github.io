@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name | Web Designer</title>
+    <style>
+        @font-face {
+            font-family: 'DOS';
+            src: url('https://fonts.cdnfonts.com/css/perfect-dos-vga-437') format('woff2');
+        }
+
+        body {
+            background-color: #000;
+            color: #33ff33;
+            font-family: 'DOS', 'Courier New', monospace;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            line-height: 1.5;
+        }
+
+        header {
+            border-bottom: 2px solid #33ff33;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        h1, h2, h3 {
+            color: #ffffff;
+        }
+
+        .terminal-line:before {
+            content: "C:\\> ";
+        }
+
+        nav {
+            margin: 20px 0;
+        }
+
+        nav a {
+            color: #33ff33;
+            text-decoration: none;
+            margin-right: 20px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+            color: #ffffff;
+        }
+
+        .project {
+            margin: 30px 0;
+            padding: 15px;
+            border: 1px solid #33ff33;
+        }
+
+        footer {
+            margin-top: 40px;
+            border-top: 2px solid #33ff33;
+            padding-top: 20px;
+        }
+
+        .blink {
+            animation: blink-animation 1s steps(2, start) infinite;
+        }
+
+        @keyframes blink-animation {
+            to {
+                visibility: hidden;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1 class="terminal-line">YOUR NAME</h1>
+    <p>Web Designer | Developer | Digital Craftsman</p>
+</header>
+
+<nav>
+    <a href="#about">ABOUT</a>
+    <a href="#projects">PROJECTS</a>
+    <a href="#contact">CONTACT</a>
+</nav>
+
+<main>
+    <section id="about">
+        <h2 class="terminal-line">ABOUT</h2>
+        <p>Former web designer with a passion for clean, functional interfaces and retro aesthetics. I blend nostalgia with modern web standards to create unique digital experiences.</p>
+    </section>
+
+    <section id="projects">
+        <h2 class="terminal-line">PROJECTS</h2>
+
+        <div class="project">
+            <h3>Project Title 1</h3>
+            <p>Brief description of the project, technologies used, and outcomes.</p>
+        </div>
+
+        <div class="project">
+            <h3>Project Title 2</h3>
+            <p>Brief description of the project, technologies used, and outcomes.</p>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2 class="terminal-line">CONTACT</h2>
+        <p>Email: your.email@example.com</p>
+        <p>GitHub: github.com/yourusername</p>
+        <p class="blink">Ready for new opportunities _</p>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2025 YOUR NAME - Made with HTML and nostalgia</p>
+</footer>
+</body>
+</html>
