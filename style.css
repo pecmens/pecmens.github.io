@@ -1,0 +1,49 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #007BA7; /* 深一点的天蓝色 */
+    font-family: 'Courier New', monospace;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.clock-container {
+    text-align: center;
+    width: 100%;
+}
+
+.time-section {
+    margin: 20px 0;
+}
+
+.time {
+    font-size: 5rem;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.date {
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    margin-top: 10px;
+}
+
+.utc-time {
+    margin-top: 40px;
+}
+
+@media (max-width: 768px) {
+    .time {
+        font-size: 3rem;
+    }
+    
+    .date {
+        font-size: 1.5rem;
+    }
+}
