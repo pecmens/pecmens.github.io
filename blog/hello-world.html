@@ -91,38 +91,51 @@
     <!-- 主要内容 -->
     <main class="main">
         <div class="container">
-            <article class="post" itemscope itemtype="https://schema.org/BlogPosting">
-                <!-- 文章头部 -->
-                <header class="post-header">
-                    <div class="post-meta">
-                        <time datetime="2024-12-30T10:00:00Z" itemprop="datePublished">
-                            2024年12月30日
-                        </time>
-                        <span class="reading-time" itemprop="timeRequired">2分钟阅读</span>
-                        <span class="author" itemprop="author">
-                            作者：<span itemprop="authorName">pecmens</span>
-                        </span>
-                    </div>
-                    
-                    <h1 class="post-title" itemprop="headline">
-                        Hello World - 欢迎来到Aurora主题博客
-                    </h1>
-                    
-                    <div class="post-tags" itemprop="keywords">
-                        <span class="tag">Hello World</span>
-                        <span class="tag">个人博客</span>
-                        <span class="tag">Aurora主题</span>
-                        <span class="tag">技术分享</span>
-                    </div>
-                </header>
+            <!-- 文章页面布局 -->
+            <div class="article-layout">
+                <article class="post" itemscope itemtype="https://schema.org/BlogPosting">
+                    <!-- 文章头部区域 -->
+                    <header class="article-header">
+                        <h1 class="article-title" itemprop="headline">
+                            Hello World - 欢迎来到Aurora主题博客
+                        </h1>
+                        
+                        <!-- 文章元数据 -->
+                        <div class="article-meta">
+                            <div class="meta-item">
+                                <span class="icon">📅</span>
+                                <time datetime="2024-12-30T10:00:00Z" itemprop="datePublished">
+                                    2024年12月30日
+                                </time>
+                            </div>
+                            <div class="meta-item">
+                                <span class="icon">⏱️</span>
+                                <span class="reading-time" itemprop="timeRequired">2分钟阅读</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="icon">👤</span>
+                                <span class="author" itemprop="author">
+                                    <span itemprop="authorName">pecmens</span>
+                                </span>
+                            </div>
+                        </div>
+                        
+                        <!-- 文章标签 -->
+                        <div class="article-tags" itemprop="keywords">
+                            <a href="/tags/hello-world/" class="tag">Hello World</a>
+                            <a href="/tags/blog/" class="tag">个人博客</a>
+                            <a href="/tags/aurora-theme/" class="tag">Aurora主题</a>
+                            <a href="/tags/tech/" class="tag">技术分享</a>
+                        </div>
+                    </header>
 
-                <!-- 文章摘要 -->
-                <div class="post-excerpt" itemprop="description">
-                    <p>欢迎来到我的个人博客！这是使用Aurora主题构建的第一篇文章。我将在这里分享关于前端开发、设计思考和技术见解的内容，希望能为同样热爱技术和设计的朋友们带来价值。</p>
-                </div>
+                    <!-- 文章摘要 -->
+                    <div class="article-excerpt" itemprop="description">
+                        欢迎来到我的个人博客！这是使用Aurora主题构建的第一篇文章。我将在这里分享关于前端开发、设计思考和技术见解的内容，希望能为同样热爱技术和设计的朋友们带来价值。
+                    </div>
 
-                <!-- 文章正文 -->
-                <div class="post-content" itemprop="articleBody">
+                    <!-- 文章内容 -->
+                    <div class="article-content" itemprop="articleBody">
                     <h2>🌟 关于这个博客</h2>
                     <p>你好，世界！欢迎来到我的个人技术博客。这个博客使用了我精心设计的<strong>Aurora主题</strong>，一个专注于<em>极光美学</em>的现代化博客主题。</p>
 
@@ -211,25 +224,37 @@
                     <p>感谢你阅读这篇入门文章。期待在未来的文章中与你相遇！🌟</p>
                 </div>
 
-                <!-- 文章尾部 -->
-                <footer class="post-footer">
-                    <div class="post-navigation">
-                        <div class="nav-links">
-                            <a href="/" class="back-home">← 返回首页</a>
-                            <a href="/blog/next-post.html" class="next-post">下一篇：待更新 →</a>
-                        </div>
+                <!-- 文章底部导航 -->
+                <footer class="article-footer">
+                    <!-- 文章导航 -->
+                    <div class="article-navigation">
+                        <a href="/" class="nav-link previous">
+                            <span class="nav-label">← 返回首页</span>
+                            <span class="nav-title">回到博客首页</span>
+                        </a>
+                        <a href="/blog/next-post.html" class="nav-link next">
+                            <span class="nav-label">下一篇：待更新 →</span>
+                            <span class="nav-title">即将发布更多精彩内容</span>
+                        </a>
                     </div>
                     
-                    <div class="post-share">
-                        <h4>分享这篇文章</h4>
+                    <!-- 文章分享 -->
+                    <div class="article-share">
+                        <h4 class="share-title">分享这篇文章</h4>
                         <div class="share-buttons">
-                            <a href="#" class="share-btn twitter" aria-label="分享到Twitter">🐦</a>
-                            <a href="#" class="share-btn weibo" aria-label="分享到微博">📱</a>
-                            <a href="#" class="share-btn wechat" aria-label="分享到微信">💬</a>
+                            <a href="#" class="share-btn twitter" aria-label="分享到Twitter">
+                                🐦 Twitter
+                            </a>
+                            <a href="#" class="share-btn weibo" aria-label="分享到微博">
+                                📱 微博
+                            </a>
+                            <a href="#" class="share-btn copy" aria-label="复制链接">
+                                🔗 复制链接
+                            </a>
                         </div>
                     </div>
                 </footer>
-            </article>
+            </div>
         </div>
     </main>
 
