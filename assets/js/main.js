@@ -1,5 +1,5 @@
 /**
- * Aurora主题 - 主JavaScript文件
+ * Modern Light主题 - 主JavaScript文件
  * 实现深色/浅色模式切换、交互功能和性能优化
  */
 
@@ -18,7 +18,7 @@ class ThemeManager {
 
   // 获取存储的主题偏好
   getStoredTheme() {
-    return localStorage.getItem('aurora-theme') || 'auto';
+    return localStorage.getItem('modern-light-theme') || 'auto';
   }
 
   // 应用主题
@@ -41,7 +41,7 @@ class ThemeManager {
     const currentIndex = themes.indexOf(this.currentTheme);
     const nextTheme = themes[(currentIndex + 1) % themes.length];
     
-    localStorage.setItem('aurora-theme', nextTheme);
+    localStorage.setItem('modern-light-theme', nextTheme);
     this.applyTheme(nextTheme);
     
     // 更新主题切换器UI
@@ -315,7 +315,7 @@ class BlogFeatures {
         this.posts = [
             {
                 id: 1,
-                title: "Hello World: 欢迎来到 Aurora 主题博客",
+                title: "Hello World: 欢迎来到 Modern Light 主题博客",
                 date: "2024-01-15",
                 category: "欢迎",
                 excerpt: "欢迎使用 Aurora 主题！这是一个现代化的博客主题...",
@@ -325,10 +325,10 @@ class BlogFeatures {
             },
             {
                 id: 2,
-                title: "Aurora 主题特性介绍",
+                title: "Modern Light 主题特性介绍",
                 date: "2024-01-16",
                 category: "主题",
-                excerpt: "Aurora 主题具有丰富的特性和现代化的设计...",
+                excerpt: "Modern Light 主题具有简洁明快的设计和现代化的用户体验...",
                 tags: ["特性", "设计"],
                 url: "/blog/aurora-features.html",
                 image: "assets/images/aurora-features.jpg"
@@ -338,7 +338,7 @@ class BlogFeatures {
                 title: "CSS 变量系统详解",
                 date: "2024-01-17",
                 category: "技术",
-                excerpt: "深入了解 Aurora 主题的 CSS 变量系统...",
+                excerpt: "深入了解 Modern Light 主题的 CSS 变量系统...",
                 tags: ["CSS", "变量", "主题"],
                 url: "/blog/css-variables.html",
                 image: "assets/images/css-variables.jpg"
@@ -501,16 +501,16 @@ class BlogFeatures {
     }
 
     initAnimations() {
-        // 初始化极光动画
+        // 初始化页面动画
         const heroSection = document.querySelector('.hero');
         if (heroSection) {
-            const auroraContainer = heroSection.querySelector('.hero-visual');
-            if (auroraContainer) {
-                auroraContainer.innerHTML = `
-                    <div class="aurora-animation">
-                        <div class="aurora-layer layer-1"></div>
-                        <div class="aurora-layer layer-2"></div>
-                        <div class="aurora-layer layer-3"></div>
+            const animationContainer = heroSection.querySelector('.hero-visual');
+            if (animationContainer) {
+                animationContainer.innerHTML = `
+                    <div class="light-animation">
+                        <div class="light-layer layer-1"></div>
+                        <div class="light-layer layer-2"></div>
+                        <div class="light-layer layer-3"></div>
                     </div>
                 `;
             }
@@ -627,7 +627,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.classList.add('loaded');
     
     // 输出初始化完成信息
-    console.log('Aurora 博客主题已成功初始化！');
+    console.log('Modern Light 博客主题已成功初始化！');
 });
 
 // 导出全局API（如果需要）
